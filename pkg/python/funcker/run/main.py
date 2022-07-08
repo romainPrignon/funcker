@@ -17,6 +17,7 @@ class Funcker:
             name=self.name,
             image=self.image,
             command=serialized_args,
+            remove=True,
             volumes={os.getcwd(): {
                 'bind': f"/tmp/{self.name}", 'mode': 'rw'}
             }
