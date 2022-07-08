@@ -1,6 +1,6 @@
-from email.mime import image
 import docker
 import json
+import os
 
 
 class Funcker:
@@ -16,18 +16,10 @@ class Funcker:
         res = client.containers.run(
             name=self.name,
             image=self.image,
-            command=serialized_args
+            command=serialized_args,
+            volumes={os.getcwd(): {
+                'bind': f"/tmp/{self.name}", 'mode': 'rw'}
+            }
         ).decode()
+
         return json.loads(res)
-
-
-Funcker('libops', 'get_terraform_outputs').run(
-    "terraform-preprod",
-    "terraform",
-    {
-        "auth": {
-            "aws_access_key_id": 'AKIA35GTCQAI47IVPXOI',
-            "aws_secret_access_key": '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'
-        }
-    }
-)
