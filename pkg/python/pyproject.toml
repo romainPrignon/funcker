@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "funcker"
-version = "0.1.0"
+version = "0.1.1"
 description = "plug and run funcker function"
 authors = ["romainprignon <pro.rprignon@gmail.com>"]
 readme = "README.md"
