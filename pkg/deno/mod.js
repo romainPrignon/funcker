@@ -1,1 +1,1 @@
-export { plug } from './plug'
+export { plug } from './plug.js'
