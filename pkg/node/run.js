@@ -28,6 +28,7 @@ class Funcker {
     const stream = await container.attach({ stream: true, stdout: true, stderr: true })
 
     await container.start()
+    await container.stop()
 
     return JSON.parse(await streamToString(stream))
   }
