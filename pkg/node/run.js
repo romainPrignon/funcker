@@ -14,7 +14,7 @@ class Funcker {
 
   async run(...args) {
     const container = await docker.createContainer({
-      name: this.name,
+      // name: this.name, // todo: handle conflict container name when tried to loop and create containers
       Image: this.image,
       Cmd: args?.map(arg => JSON.stringify(arg)) || [],
       Env: [],

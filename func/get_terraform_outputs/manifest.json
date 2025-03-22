@@ -1,0 +1,5 @@
+{
+    "namespace": "libops",
+    "name": "get_terraform_outputs",
+    "version": "latest"
+}
